@@ -1,0 +1,105 @@
+body {
+  margin: 40px 0;
+}
+.bam-logo {
+  width: 180px;
+}
+.condensed p {
+  margin: 0;
+}
+.qualify {
+  margin: auto;
+  font-weight: bold;
+}
+.qualify td {
+  width: 100px;
+}
+.qualify input {
+  height: 30px;
+  width: 30px;
+  background-color: red;
+}
+
+.strong{
+  font-weight: bold;
+}
+
+.next {
+  width: 140px;
+  margin: auto;
+}
+.next b{
+  font-size: 20px;
+}
+.prev {
+  color: dimgray;
+  width: 120px;
+  border-radius: 0;
+  border: 1px solid dimgray;
+}
+.help {
+  color: dimgray;
+  width: 66px;
+  border-radius: 0;
+  border: 1px solid dimgray;
+}
+textarea {
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+#poll_description h2, #poll_description h4, #poll_description h5{
+  font-weight: bold;
+  margin-bottom: 1px;
+  margin-top: 1px;
+  text-align: right;
+}
+
+#indicator_text{
+  text-align: justify;
+}
+
+.add_programs input{
+  width: 100%;
+}
+
+.add_programs a{
+  color: black;
+}
+
+.added_prog{
+  display: flex;
+  text-align: justify;
+}
+
+.remove_prog{
+  font-weight: bold;
+  cursor: pointer;
+  align-self: center;
+}
+
+.radios{
+  cursor: pointer;
+}
+.popover-content{
+  width: 235px;
+}
+
+.black-button {
+  font-size: 20px;
+  color: white;
+  border-radius: 0;
+  background-color: black;
+  border: 2px solid black;
+}
+.black-button:hover {
+  background-color: white;
+  color: black;
+}
+.red{
+  color: red;
+}
+
+.link{
+  color: black;
+}
