@@ -20,13 +20,6 @@
 						                    <b>&ltPREVIOUS</b>
 						                </button>`;
 
-
-				//Save values of anwers locally
-          		if(self == 'next' && current_position == 2 ){
-          			//answers[current_position] = $('input[name=study]:checked', '.qualify').val();
-          			//explains[current_position] = answers[current_position] == 1 ? "" : $('.why').val();
-          		}
-
           		//Set Title Indicator and Main text
             	indicator_title.html(data['indicator']['name']);
             	indicator_text.html(data['data_indicator']['main_text']);
@@ -39,7 +32,7 @@
 
             	//Set Button name depending on Indicator position
             	if(data['indicator']['position'] == 1) button_text.html('START');
-            	else if(data['indicator']['position'] == 3) button_text.html('FINISH')
+            	else if(data['indicator']['position'] == 3) button_text.html('SUBMIT')
             	else button_text.html('NEXT');           
 
             	//Hide previous button if in first pahe
@@ -84,10 +77,10 @@
 									                <th class="text-center">
 									                    <b id="header_country">${ data['common']['country'] }</b>
 									                </th>
-									                <th class="text-center">
+									                <th class="text-center fq">
 									                    <b id="header_yes">${ data['common']['first_question'] }</b>
 									                </th>
-									                <th class="text-center">
+									                <th class="text-center sq">
 									                    <b id="header_no">${ data['common']['second_question'] }</b>
 									                </th>
 									                <th class="text-center">
@@ -106,7 +99,7 @@
 									    <br>
 									    <br>`;
 
-					$('#indicator_body').html(indicator_body);
+					$('#indicator_body').html(`<div class="col-xs-12">${indicator_body}</div>`);
             	}else if(data['indicator']['position'] == 3){
             		let current_prog = "";
             		$.each(new_programs, function(prog, why){
@@ -123,13 +116,13 @@
             								<div class="col-sm-7"><input type="text" placeholder="Why?" id="why_add"></div>
             								<div class="col-xs-12 text-right"><a href="#" id="add_prog"><h6><strong>Add program +</strong></h6></a></div>
             							</div></br></br>`;
-            		$('#indicator_body').html(indicator_body);
+            		$('#indicator_body').html(`<div class="col-lg-offset-2 col-lg-8 col-xs-12">${indicator_body}</div>`);
             	}else{
             		$('#indicator_body').empty();
             	}
             	//scroll to top
             	if(data['indicator']['position'] == 4){
-            		$('.next, .prev').addClass('hidden');
+            		$('.next, .prev, .help').addClass('hidden');
             	}
             	window.scrollTo(0, 0);
             }

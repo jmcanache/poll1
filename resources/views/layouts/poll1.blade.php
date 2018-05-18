@@ -17,16 +17,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-lg-offset-2 col-lg-8 col-xs-12">
-                <figure>
-                    <img src="{{URL::asset('imgs/Logo.png')}}" alt="BAM logo" class="bam-logo">
-                </figure>  
-                
-                <br>
-                
-                @yield('content')
-
-            </div>
+            @yield('content')
         </div>
     </div>
     

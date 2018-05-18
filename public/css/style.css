@@ -100,6 +100,23 @@ textarea {
   color: red;
 }
 
-.link{
+.link,.last_link{
   color: black;
+}
+
+table{
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+table > thead{
+  background-color: #eaeaea;
+}
+
+th.fq, th.sq {
+  background-color: #c5c3c3;
+}
+
+table > thead > tr > th{
+  border-bottom: none !important;
 }
