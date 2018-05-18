@@ -11,7 +11,7 @@
             type: "GET",
             url: '/getNextPageInfo/'+ next_position,
             success: (data) => {
-            	console.log(data);
+            	//console.log(data);
             	
           		const indicator_title = $('#indicator_title');
             	const indicator_text = $('#indicator_text');
@@ -262,8 +262,8 @@
  			let position = $(this).attr('position');
  			let official_link = $(this).find('.tmp_official').val();
  			let bam_link = $(this).find('.tmp_bam').val();
- 			$('.table_bam > a').attr('href', bam_link);
- 			$('.table_official > a').attr('href', official_link);
+ 			$(this).find('.table_bam > a').attr('href', bam_link);
+ 			$(this).find('.table_official > a').attr('href', official_link);
  			table_indicators[index] = {
  				'name': name, 
  				'university': university,

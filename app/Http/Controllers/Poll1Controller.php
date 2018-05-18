@@ -56,8 +56,6 @@ class Poll1Controller extends Controller
     }
 
     public function edit_data(Request $request){
-    	Log::debug($request);
-    	
     	try{
 	    	$indicator = Indicator::getIndicatorByPosition($request['indicator']['position']);
 
