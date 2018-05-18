@@ -167,14 +167,14 @@
  		$('[data-toggle="popover"]').popover('hide');
 
  		//Validacion para permitir que next avance
- 		/*if(next_position == 3 && Object.keys(answers).length != 20){
+ 		if(next_position == 3 && Object.keys(answers).length != 20){
  			$('.row_table').addClass('red');
  			$.each(answers, (position, value) => {
 				$('.row_table[position='+ position +']').removeClass('red');
  			});
  			alert('Please Complete all the options');
  			return;
- 		} */
+ 		} 
        	ajaxCall('next', next_position);
  	});
 
