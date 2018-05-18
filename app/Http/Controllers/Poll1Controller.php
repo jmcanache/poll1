@@ -46,7 +46,7 @@ class Poll1Controller extends Controller
         try{
 	        Mail::send('emails.email_poll', ['answers' => $request['answers'], 'new_programs' => $new_programs, 'table_indicators' => $table_indicator], function ($m) {
 	            $m->from('bam-noreply@bestarchitecturemasters.com', 'BAM');
-	            $m->to('canache39@gmail.com', 'BAM')->subject('BAM FORM #1');
+	            $m->to('info@bestarchitecturemasters.com', 'BAM')->subject('BAM FORM #1');
 	        });
 	    }catch(\Exception $e){
 	    	Log::debug($e);
