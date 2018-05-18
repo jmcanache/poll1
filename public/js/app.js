@@ -140,7 +140,7 @@
  		let next_position = $('.next').attr('id');
  		
  		if(next_position == 4) {
- 			//$('.next, .prev').prop('disabled', true);
+ 			$('.next, .prev').prop('disabled', true);
  			mail_data = {
  				'answers': answers,
  				'new_programs': new_programs,
@@ -162,7 +162,6 @@
 	            	}
 	            }
         	})
- 			return;
  		}
  		//hide popover of help
  		$('[data-toggle="popover"]').popover('hide');
