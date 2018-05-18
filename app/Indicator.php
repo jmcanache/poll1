@@ -19,4 +19,14 @@ class Indicator extends Model
     }
 
     /*********** Relationships End ***************/
+
+    public static function getIndicatorByPosition($position){
+        return self::where('position', $position)->first();
+    }
+
+    public static function updateIndicator($data){
+        $indicator = self::getIndicatorByPosition($data['position']);
+        $indicator->name = trim($data['name']);
+        $indicator->save();
+    }
 }

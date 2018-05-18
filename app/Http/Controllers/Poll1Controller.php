@@ -17,7 +17,12 @@ class Poll1Controller extends Controller
 {
     public function index(){
     	$data = $this->indexAlgotirhm();
-    	return view('poll/main_poll')->with('data', $data);
+    	return view('poll/main_poll', array('data' => $data, 'edit_active' => false));
+    }
+
+    public function index_edit(){
+    	$data = $this->indexAlgotirhm();
+    	return view('poll/main_poll', array('data' => $data, 'edit_active' => true));
     }
 
     public function getNextPageInfo($next_position){
@@ -48,6 +53,34 @@ class Poll1Controller extends Controller
 		    return response()->json(array('send' => 0));
 		}
 		return response()->json(array('send' => 1));
+    }
+
+    public function edit_data(Request $request){
+    	Log::debug($request);
+    	
+    	try{
+	    	$indicator = Indicator::getIndicatorByPosition($request['indicator']['position']);
+
+	    	//Update description field in Custom_poll Table
+	    	if(array_has($request['custom_polls'], 'description')) CustomPoll::updateDescription(trim($request['custom_polls']['description']));
+	    	
+	    	//Update Indicator table
+	    	if(array_has($request, 'indicator')) Indicator::updateIndicator($request['indicator']);
+	    	
+	    	//Update DataIndicator table
+	    	if(array_has($request, 'data_indicator')) DataIndicator::updateDataIndicator($indicator->id, $request['data_indicator']);
+	    	
+	    	//Update Common table
+	    	if(array_has($request, 'common')) Common::updateCommonData($request['common']);
+			
+	    	//Update TableIndicator table
+	    	if(array_has($request, 'table_indicators')) foreach ($request['table_indicators'] as $row) TableIndicator::insertNewData($row);
+
+    	}catch(\Exception $e){
+    		Log::debug($e);
+		    return response()->json(array('edited' => 0));
+		}
+    	return response()->json(array('edited' => 1));
     }
 
    	private function indexAlgotirhm(){
