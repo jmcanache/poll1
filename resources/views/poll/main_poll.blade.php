@@ -28,9 +28,9 @@
 
         <br>
 
-        <p id="indicator_text">
+        <div id="indicator_text">
             {!! $data['data_indicator']['main_text'] !!}
-        </p>
+        </div>
 
         <br>
     </div>

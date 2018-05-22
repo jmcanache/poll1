@@ -97,7 +97,7 @@ textarea {
   color: black;
 }
 .red{
-  color: red;
+  color: red !important;
 }
 
 .link,.last_link{
